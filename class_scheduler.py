@@ -26,7 +26,7 @@ def render_teacher_buttons(unit_suffix, row):
             if st.button(button_label, key=unit, use_container_width=True):
                 new_teacher = TEACHERS[(TEACHERS.index(current_teacher) + 1) % len(TEACHERS)]
                 st.session_state.assignments[unit] = new_teacher
-                st.experimental_rerun()  # Trigger a rerun to immediately reflect the change
+                st.rerun()  # Trigger a rerun to immediately reflect the change
 
 def check_rules():
     """Check the validation rules and return the results."""
